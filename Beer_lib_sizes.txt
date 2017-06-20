@@ -3,8 +3,8 @@ Bieraria_Tschlin_BE 640291
 Brasserie_dAyent_Celsius_Folamour 634121
 Brasserie_des_5_quatre_mille_Biere_de_Zinal 600066
 Brasserie_du_Griffon_La_Fourbe 377774
-Brasserie_DuPont_BioLegere 483889
 Brasserie_du_Vieux_Chemin_La_Prudencia 454462
+Brasserie_DuPont_BioLegere 483889
 Brasserie_Gessienne_Blanche 379492
 Brasserie_Sierrvoise_Noire 353605
 Brasserie_Tardiv 585357

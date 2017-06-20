@@ -7,7 +7,7 @@ library(RColorBrewer)
 library(ape)
 library(ggdendro)
 library(gplots)
-
+library(FactoMineR)
 # Id_mapping=read.table("species_ID_mapping.txt",sep=" ")
 # BeerDecoded_seq_res=read.table("Beer_results_all.txt",sep = " ")
 # ii=match(BeerDecoded_seq_res[,2],Id_mapping[,1])
@@ -20,6 +20,20 @@ library(gplots)
 # write.csv(BeerDecoded_seq_res_clean,file = "BeerDecoded_seq_res_clean.csv",col.names = F,quote =F)
 
 BeerDecoded_seq_res_clean=read.csv("BeerDecoded_seq_res_clean.csv")
+
+QC=read.table("beer_lib_sizes.txt")
+QCA=data.frame(BeerDecoded_seq_res_clean %>%  group_by(Beer) %>% summarise(count_tot=sum(counts)))
+
+# percentage of non aligned reads
+(1-QCA[,2]/QC[,2])*100
+
+BeerDecoded_seq_res_clean=data.frame(BeerDecoded_seq_res_clean %>%  group_by(Beer) %>% 
+  mutate(per=paste0(round(counts/sum(counts)*100, 2), "%")) %>% 
+  ungroup)
+
+#write.csv(BeerDecoded_seq_res_clean,file = "BeerDecoded_seq_res_clean.csv",col.names = F,quote =F)
+
+BeerDecoded_seq_res_clean %>% filter(sp_name=="Brettanomyces bruxellensis")
 
 Beer_mat=acast(BeerDecoded_seq_res_clean, Beer~sp_name, value.var="counts")
 Beer_mat[which(is.na(Beer_mat))]=0
@@ -82,5 +96,5 @@ print(p)
 dev.off()
 
 
-QC=read.table("beer_lib_sizes.txt")
+
 
