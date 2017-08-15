@@ -67,7 +67,7 @@ heatmap.2(log10(Beer_mat[,colnames(Beer_mat) %in% dplyr::filter(Taxon_var,Freq >
           margins =c(12,16),     # widens margins around plot
           col=my_palette,       # use on color palette defined earlier
           #breaks=col_breaks,    # enable color transition at specified limits
-          dendrogram="row",     # only draw a row dendrogram
+          dendrogram="both",     # only draw a row dendrogram
           Colv="Rowv")            # turn off column clustering
 
 
