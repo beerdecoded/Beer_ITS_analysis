@@ -1,46 +1,32 @@
 library(dplyr)
-library(ggfortify)
-library(cluster)
-library(ggplot2)
 library(reshape2)
+library(ggplot2)
+library(FactoMineR)
+library(ggdendro)
 library(RColorBrewer)
 library(ape)
-library(ggdendro)
 library(gplots)
-library(FactoMineR)
-# Id_mapping=read.table("species_ID_mapping.txt",sep=" ")
-# BeerDecoded_seq_res=read.table("Beer_results_all.txt",sep = " ")
-# ii=match(BeerDecoded_seq_res[,2],Id_mapping[,1])
-# 
-# BeerDecoded_seq_res[,4]=paste(Id_mapping[ii,2],Id_mapping[ii,3],sep =" ")
-# 
-# BeerDecoded_seq_res_clean=filter(BeerDecoded_seq_res,V2!="" & V1>=10)
-# colnames(BeerDecoded_seq_res_clean)=c("counts","sp_ID","Beer","sp_name")
-# 
-# write.csv(BeerDecoded_seq_res_clean,file = "BeerDecoded_seq_res_clean.csv",col.names = F,quote =F)
 
-BeerDecoded_seq_res_clean=read.csv("BeerDecoded_seq_res_clean.csv")
 
-QC=read.table("beer_lib_sizes.txt")
-QCA=data.frame(BeerDecoded_seq_res_clean %>%  group_by(Beer) %>% summarise(count_tot=sum(counts)))
+#Load raw counts
+BeerDecoded_seq_res_clean=read.csv("BeerDecoded_seq_res_clean.csv", header = TRUE, sep = ';')
 
-# percentage of non aligned reads
-(1-QCA[,2]/QC[,2])*100
+QCA=data.frame(BeerDecoded_seq_res_clean %>%  group_by(Beer) %>% summarise(count_tot=sum(read.count)))
 
-BeerDecoded_seq_res_clean=data.frame(BeerDecoded_seq_res_clean %>%  group_by(Beer) %>% 
-  mutate(per=paste0(round(counts/sum(counts)*100, 2), "%")) %>% 
+
+BeerDecoded_seq_res_clean=data.frame(BeerDecoded_seq_res_clean %>% group_by(Beer) %>% 
+  mutate(per=read.count/sum(read.count)*100, ratio=read.count/sum(read.count)) %>% 
   ungroup)
 
-#write.csv(BeerDecoded_seq_res_clean,file = "BeerDecoded_seq_res_clean.csv",col.names = F,quote =F)
+Beer_mat=acast(BeerDecoded_seq_res_clean, Beer~sp_name, value.var="read.count")
 
-BeerDecoded_seq_res_clean %>% filter(sp_name=="Brettanomyces bruxellensis")
-
-Beer_mat=acast(BeerDecoded_seq_res_clean, Beer~sp_name, value.var="counts")
 Beer_mat[which(is.na(Beer_mat))]=0
 
 write.csv(Beer_mat,file = "BeerDecoded_mat.csv",quote =F)
 
+
 pdf("beer_analysis.pdf",width=8, height=8,useDingbats=F)
+
 log.Beer_mat=log(Beer_mat+1)
 res.pca = PCA(log.Beer_mat, scale.unit=TRUE, ncp=8, graph=F)
 plot.PCA(res.pca,cex=0.8,axes = c(1, 2))
@@ -58,7 +44,7 @@ op = par(bg = "#E8DDCB")
 plot(as.phylo(hc), type = "fan", tip.color = mypal[clus5], label.offset = 1, 
      cex = 1., col = "red")
 
-BeerDecoded_seq_res_clean_sel=dplyr::filter(BeerDecoded_seq_res_clean,counts >= 10)
+BeerDecoded_seq_res_clean_sel=dplyr::filter(BeerDecoded_seq_res_clean,read.count >= 10)
 
 beer_var=as.data.frame(table(BeerDecoded_seq_res_clean_sel$Beer))
 
@@ -89,7 +75,7 @@ ggplot(dplyr::filter(Taxon_var,Freq >1), aes(x = reorder(Var1, Freq), y = Freq))
   geom_bar(stat = "identity",colour="brown",fill="#ffd500")+coord_flip()+xlab("Taxon")+ylab("beer variety")+theme_bw()
 
 for(beer in unique(BeerDecoded_seq_res_clean$Beer)){
-  p=ggplot(filter(BeerDecoded_seq_res_clean,Beer==beer), aes(x = reorder(sp_name, counts), y = log10(counts))) + ggtitle(beer)+
+  p=ggplot(filter(BeerDecoded_seq_res_clean,Beer==beer), aes(x = reorder(sp_name, read.count), y = log10(read.count))) + ggtitle(beer)+
     geom_bar(stat = "identity",colour="darkgrey",fill="darkgreen")+coord_flip()+xlab("ITS")+ylab("log10 counts")+theme_bw()
 print(p)
   }
