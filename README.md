@@ -1,3 +1,9 @@
+![alt text](https://raw.githubusercontent.com/BeerDecodedProject/beer-data/master/assets/logo.png)
+
+At [BeerDeCoded](http://www.genome.beer) we map beer at molecular level to help brewers and beer passionates to make more informed decisions.
+
+We want to create a molecular tree of beers that links beers with similar properties. Akin to a fingerprint, this open information could be used for B2B and B2C projects. For instance, BeerDeCoded will help craft brewers benchmark new recipes against existing products and control their quality.
+
 # Beer_ITS_analysis
 ## BeerDeCoded first results using ITS mapping
 
@@ -10,14 +16,24 @@ Altogether, we demonstrated that coupling simple laboratory procedures with DNA 
 
 ## Content of the repository
 
--	Preliminary analysis of the FASTQ files for 39 Beers
-	The scripts that were used on the 	cluster: 	mapping_Beer_to_ITS.sh and BEER_DeCoded_ITS_count.sh
--	R statistical analysis of the preprocessed results: Beer_seq.R
--	Preprocessed results: BeerDecoded_seq_res_clean.csv or xlsx 
+-	Sup_Data folder: Preliminary analysis of the FASTQ files for 39 Beers
+-	Code folder:
+		The scripts that were used on the 	cluster: 
+			-	mapping_Beer_to_ITS.sh
+			-	BEER_DeCoded_ITS_count.sh
+		R statistical analysis of the preprocessed results: 	-	
+		
+			-	BEER_DeCoded_ITS_count.sh
+			-	Metagenomic_data_preparation.py
+			-	oneCodex_output_viz.R
+			-	Beer_seq.R
+			
+-	Preprocessed results: 
+		.	BeerDecoded_seq_res_clean.csv or xlsx 
 
--	Beer metadata
--	Plots
+-	Sup_Data folder: Beer metadata
+-	figure folder: Plots
 
 ## Raw Data
 
-the raw data of our ITS sequencing of the 39 beers will be accessible on the SRA database bioproject  ID PRJNA388541
+the raw data of our ITS sequencing of the 39 beers will be accessible on the SRA database bioproject [ID PRJNA388541](https://www.ncbi.nlm.nih.gov/bioproject/388541) 
