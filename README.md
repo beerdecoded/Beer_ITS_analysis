@@ -14,9 +14,8 @@ We have now obtained the metagenomic profiles for 39 of these beers using a targ
 
 Altogether, we demonstrated that coupling simple laboratory procedures with DNA sequencing and metagenomic analysis can allow the detection of the microbial content in commercial beer and can easily trigger a tripartite conversation between the general public, the scientists and professional brewers.
 
-for more informations you can look at at the public summary of the progect on [kudos](https://www.growkudos.com/publications/10.12688%25252Ff1000research.12564.1/reader) 
+for more informations you can look at at the public summary of the project  on [kudos](https://www.growkudos.com/publications/10.12688%25252Ff1000research.12564.1/reader) 
  
-
 ## Content of the repository
 
 ###	Sup_Data folder: 
@@ -37,10 +36,18 @@ for more informations you can look at at the public summary of the progect on [k
 			-	oneCodex_output_viz.R
 			-	Beer_seq.R
 			
-### QC: quality control using Samstat of every beer
-###	Sup_Data folder: Beer metadata
-###	figure folder: Plots
+### QC: 
 
+	-	quality control using Samstat of every beer
+	
+###	Sup_Data folder: 
+
+	-	Beer metadata
+	
+###	figure folder: 
+
+	-	Plots
+	
 ## Raw Data
 
 the raw data of our ITS sequencing of the 39 beers will be accessible on the SRA database bioproject [ID PRJNA388541](https://www.ncbi.nlm.nih.gov/bioproject/388541) 
