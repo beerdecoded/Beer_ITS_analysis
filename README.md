@@ -16,6 +16,8 @@ We have now obtained the metagenomic profiles for 39 of these beers using a targ
 Altogether, we demonstrated that coupling simple laboratory procedures with DNA sequencing and metagenomic analysis can allow the detection of the microbial content in commercial beer and can easily trigger a tripartite conversation between the general public, the scientists and professional brewers.
 
 for more informations you can look at at the public summary of the project  on [kudos](https://www.growkudos.com/publications/10.12688%25252Ff1000research.12564.1/reader) 
+
+Or on our publication on F1000: [Sobel J, Henry L, Rotman N and Rando G. BeerDeCoded: the open beer metagenome project [version 1; referees: 3 approved with reservations]. F1000Research 2017, 6:1676](https://f1000research.com/articles/6-1676/v1)
  
 ## Content of the repository
 
