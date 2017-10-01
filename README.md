@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/BeerDecodedProject/beer-data/master/assets/logo.png)
+![alt text](https://raw.githubusercontent.com/BeerDecodedProject/beer-data/master/assets/logo.png) { width: 200px; }
 
 At [BeerDeCoded](http://www.genome.beer) we map beer at molecular level to help brewers and beer passionates to make more informed decisions.
 
