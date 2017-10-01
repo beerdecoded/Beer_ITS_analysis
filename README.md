@@ -5,7 +5,7 @@ At [BeerDeCoded](http://www.genome.beer) we map beer at molecular level to help 
 
 We want to create a molecular tree of beers that links beers with similar properties. Akin to a fingerprint, this open information could be used for B2B and B2C projects. For instance, BeerDeCoded will help craft brewers benchmark new recipes against existing products and control their quality.
 
-# Beer_ITS_analysis
+# Beer ITS analysis
 ## BeerDeCoded first results using ITS mapping
 
 ### BeerDeCoded: exploring the beer metagenome
@@ -56,4 +56,18 @@ Or on our publication on F1000: [Sobel J, Henry L, Rotman N and Rando G. BeerDeC
 	
 ## Raw Data
 
-the raw data of our ITS sequencing of the 39 beers will be accessible on the SRA database bioproject [ID PRJNA388541](https://www.ncbi.nlm.nih.gov/bioproject/388541) 
+the raw data of our ITS sequencing of the 39 beers will be accessible on the SRA database bioproject [ID PRJNA388541](https://www.ncbi.nlm.nih.gov/bioproject/388541)
+
+# Raman spectroscopy
+
+In addition we produced a spectroscopy dataset during the Open Food Data Hackaton
+
+[Raman spectroscopy beer data-set](https://github.com/beerdecoded/Beer_ITS_analysis/blob/master/Open_food_hackaton.md)
+
+# BREF Grant 
+
+we tried (without sucess) to get more funding through the Brewers' Research and Education Fund with the following grant application.
+
+[BeerDeCoded Grant application](https://github.com/beerdecoded/Beer_ITS_analysis/blob/master/BeerDecoded_BREF.pdf)
+
+this application might be useful to reaserchers willing to join the BeerDeCoded project.
