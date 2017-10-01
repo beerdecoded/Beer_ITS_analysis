@@ -26,11 +26,12 @@ for more informations you can look at at the public summary of the project  on [
 	
 ###	Code folder:
 
-		The scripts that were used on the 	cluster: 
+####		The scripts that were used on the cluster: 
 		
 			-	mapping_Beer_to_ITS.sh
 			-	BEER_DeCoded_ITS_count.sh
-		R statistical analysis of the preprocessed results: 	-	
+			
+####		R statistical analysis of the preprocessed results: 	-	
 		
 			-	BEER_DeCoded_ITS_count.sh
 			-	Metagenomic_data_preparation.py
