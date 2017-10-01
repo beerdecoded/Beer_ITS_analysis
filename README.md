@@ -40,11 +40,13 @@ for more informations you can look at at the public summary of the project  on [
 			
 ### QC: 
 
-	-	quality control using Samstat of every beer
+	-	quality control of every beer using Samstat
 	
 ###	Sup_Data folder: 
 
 	-	Beer metadata
+	-	Beer read counts
+	-	Beer library size
 	
 ###	figure folder: 
 
