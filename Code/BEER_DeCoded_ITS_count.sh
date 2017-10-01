@@ -16,7 +16,7 @@ for i in $( ls *_sorted.bam)
 do
 	SUBSTRING=$(echo $i| cut -d'.' -f 1)
 	echo $SUBSTRING
-	samtools view $i|cut -f 3|sort|uniq -c|sed 's/|/ /g'|awk -v beer="$SUBSTRING" '{print $1, $5, beer}'| sort -n -r |sed 's/_sorted//g' >> Beer_results_all.txt	
+	samtools view -q 3 $i|cut -f 3|sort|uniq -c|sed 's/|/ /g'|awk -v beer="$SUBSTRING" '{print $1, $5, beer}'| sort -n -r |sed 's/_sorted//g' >> Beer_results_all.txt	
 done
       
 grep '>' ITS_sequence.fa| cut -d '|' -f 4,5|sed 's/; from TYPE material//g' > species_ID_mapping.txt
