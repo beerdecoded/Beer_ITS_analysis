@@ -1,5 +1,5 @@
 
-<img src="https://raw.githubusercontent.com/BeerDecodedProject/beer-data/master/assets/logo.png" width="48">
+<img src="https://raw.githubusercontent.com/BeerDecodedProject/beer-data/master/assets/logo.png" width="300">
 
 At [BeerDeCoded](http://www.genome.beer) we map beer at molecular level to help brewers and beer passionates to make more informed decisions.
 
