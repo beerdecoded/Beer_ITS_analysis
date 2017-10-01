@@ -70,4 +70,4 @@ We tried (without sucess) to get more funding through the Brewers' Research and 
 
 [BeerDeCoded Grant application](https://github.com/beerdecoded/Beer_ITS_analysis/blob/master/BeerDecoded_BREF.pdf)
 
-This application might be useful to reaserchers willing to join the BeerDeCoded project.
+This application might be useful to researchers willing to join the BeerDeCoded project.
