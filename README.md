@@ -14,11 +14,20 @@ We have now obtained the metagenomic profiles for 39 of these beers using a targ
 
 Altogether, we demonstrated that coupling simple laboratory procedures with DNA sequencing and metagenomic analysis can allow the detection of the microbial content in commercial beer and can easily trigger a tripartite conversation between the general public, the scientists and professional brewers.
 
+for more informations you can look at at the public summary of the progect on [kudos](https://www.growkudos.com/publications/10.12688%25252Ff1000research.12564.1/reader) 
+ 
+
 ## Content of the repository
 
--	Sup_Data folder: Preliminary analysis of the FASTQ files for 39 Beers
--	Code folder:
+###	Sup_Data folder: 
+
+	-	Preliminary analysis of the FASTQ files for 39 Beers
+	-	Preprocessed results: BeerDecoded_seq_res_clean.csv or .xlsx
+	
+###	Code folder:
+
 		The scripts that were used on the 	cluster: 
+		
 			-	mapping_Beer_to_ITS.sh
 			-	BEER_DeCoded_ITS_count.sh
 		R statistical analysis of the preprocessed results: 	-	
@@ -28,11 +37,9 @@ Altogether, we demonstrated that coupling simple laboratory procedures with DNA 
 			-	oneCodex_output_viz.R
 			-	Beer_seq.R
 			
--	Preprocessed results: 
-		.	BeerDecoded_seq_res_clean.csv or xlsx 
-
--	Sup_Data folder: Beer metadata
--	figure folder: Plots
+### QC: quality control using Samstat of every beer
+###	Sup_Data folder: Beer metadata
+###	figure folder: Plots
 
 ## Raw Data
 
